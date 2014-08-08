@@ -20,6 +20,7 @@
 
   <% @person.email_addresses.each do |email| %>
     <li><%= email.address %>
+      <%= link_to 'delete', email, method: :delete, data: {confirm: 'Are you sure?'} %>
     </li>
   <% end %>
 
