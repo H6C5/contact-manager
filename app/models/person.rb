@@ -1,6 +1,6 @@
 class Person < ActiveRecord::Base
   #relationships
-  has_many :phone_numbers
+  has_many :phone_numbers,  as: :contact
   has_many :email_addresses
 
   #validations
