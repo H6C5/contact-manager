@@ -4,7 +4,8 @@ RSpec.describe "email_addresses/show", :type => :view do
   before(:each) do
     @email_address = assign(:email_address, EmailAddress.create!(
       :address => "Address",
-      :person_id => 1
+      :contact_id => 1,
+      :contact_type => "Person"
     ))
   end
 
@@ -12,5 +13,6 @@ RSpec.describe "email_addresses/show", :type => :view do
     render
     expect(rendered).to match(/Address/)
     expect(rendered).to match(/1/)
+    expect(rendered).to match(/Person/)
   end
 end
