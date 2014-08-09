@@ -91,10 +91,10 @@ describe 'the person view', type: :feature do
       old_email = email.address
 
       first(:link, 'edit').click
-      page.fill_in('Email', with: 'im_batman@example.com')
-      page.click.button('Update Email Address')
-      expect(page).to hace_content('im_batman@example.com')
-      expect(page).to_not hace_content(old_email)
+      page.fill_in('Address', with: 'im_batman@example.com')
+      page.click_on('Update Email address')
+      expect(page).to have_content('im_batman@example.com')
+      expect(page).to_not have_content(old_email)
     end
 
 

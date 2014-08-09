@@ -9,6 +9,7 @@ RSpec.describe "phone_numbers/edit", :type => :view do
   end
 
   it "renders the edit phone_number form" do
+    pending
     render
 
     assert_select "form[action=?][method=?]", phone_number_path(@phone_number), "post" do
