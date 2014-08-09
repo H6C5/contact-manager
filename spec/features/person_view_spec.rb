@@ -4,8 +4,6 @@ describe 'the person view', type: :feature do
 
   let(:person) {Person.create(first_name: 'John', last_name: 'Doe')}
 
-  describe 'the person view', type: :feature do
-
     before(:each) do
       person.phone_numbers.create(number: "555-1234")
       person.phone_numbers.create(number: "555-5678")
@@ -52,7 +50,7 @@ describe 'the person view', type: :feature do
         expect(page).to have_link('delete', href: phone_number_path(phone))
       end
     end
-  end
+
 
   describe 'the person view', type: :feature do
 
@@ -71,7 +69,6 @@ describe 'the person view', type: :feature do
     end
 
     it 'returns to the person page after add a new email address' do
-      pending
       new_email = 'im_batman@example.com'
       page.click_link('Add email address')
       page.fill_in('email_address_address', with: new_email)
@@ -89,7 +86,7 @@ describe 'the person view', type: :feature do
       email     = person.email_addresses.first
       old_email = email.address
 
-      first(:link, 'edit').click
+      first(:link, 'edit-mail').click
       page.fill_in('Address', with: 'im_batman@example.com')
       page.click_on('Update Email address')
       expect(page).to have_content('im_batman@example.com')

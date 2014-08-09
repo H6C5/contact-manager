@@ -1,7 +1,6 @@
 class EmailAddress < ActiveRecord::Base
 
-  belongs_to :person
+  belongs_to :contact, polymorphic: true
 
-  validates :address, :person_id, presence: true
-  validates :person_id, numericality: { only_integer: true }
+  validates :address, :contact_id, :contact_type,  presence: true
 end
